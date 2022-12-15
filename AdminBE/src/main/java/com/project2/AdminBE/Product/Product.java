@@ -16,7 +16,7 @@ public class Product {
             strategy = GenerationType.IDENTITY,
             generator = "product_sequence"
     )
-    private long id;
+    private Long id;
     @Column(name = "dop")
     private Date dop;
     @Column(name = "id_Type")
@@ -33,7 +33,7 @@ public class Product {
     public Product() {
     }
 
-    public Product(long id, Date dop, Long id_Type, String image, String name, Double price, int quanlity) {
+    public Product(Long id, Date dop, Long id_Type, String image, String name, Double price, int quanlity) {
         this.id = id;
         this.dop = dop;
         this.id_Type = id_Type;
@@ -43,7 +43,7 @@ public class Product {
         this.quanlity = quanlity;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

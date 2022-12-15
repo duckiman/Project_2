@@ -20,4 +20,17 @@ public class ProductService {
     public Product addProduct(Product product) {
         return productRepo.save(product);
     }
+
+    public Product updProduct(Product product) {
+        return productRepo.save(product);
+    }
+
+    public boolean deleteProduct(Long id) {
+        try{
+            productRepo.deleteById(id);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
 }
