@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+//import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: 'app-root',
@@ -10,15 +10,14 @@ export class AppComponent implements OnInit{
   title = 'AdminFE';
 
   ngOnInit(): void {
-    this.onLoad();
+//    this.onLoad();
   }
-  constructor(private http: HttpClient) {
-  };
-  onLoad(){
-  this.http.get<any>('http://localhost:8070/api/sp1/product/list').subscribe(
-    response => {
-      console.log("xxxxxxxxxxxxxxxxxxxx", response);
-      }
-    );
-  }
+  constructor() {}
+  // onLoad(){
+  // this.http.get<any>('http://localhost:8070/api/sp1/product/list').subscribe(
+  //   response => {
+  //     console.log(response);
+  //     }
+  //   );
+  // }
 }
