@@ -22,6 +22,7 @@ public class ProductController {
     @GetMapping("/list")
     public ResponseEntity<List<Product>> listProduct(){
         List<Product> list = productService.getProduct();
+
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
     @PostMapping("/add")

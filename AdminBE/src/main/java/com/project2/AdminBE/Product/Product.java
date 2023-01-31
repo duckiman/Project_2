@@ -1,8 +1,7 @@
 package com.project2.AdminBE.Product;
 
-
 import javax.persistence.*;
-
+import java.util.Date;
 
 @Entity
 @Table(name = "Product")
@@ -18,30 +17,30 @@ public class Product {
             generator = "product_sequence"
     )
     private Long id;
-    @Column(name = "description")
-    private String description;
-    @Column(name = "cat_Id")
-    private Long cat_Id;
+    @Column(name = "dop")
+    private Date dop;
+    @Column(name = "id_Type")
+    private Long id_Type;
     @Column(name = "image")
     private String image;
     @Column(name = "name")
     private String name;
     @Column(name = "price")
     private Double price;
-    @Column(name = "quantity")
-    private int quantity;
+    @Column(name = "quanlity")
+    private int quanlity;
 
     public Product() {
     }
 
-    public Product(Long id, String description, Long cat_Id, String image, String name, Double price, int quantity) {
+    public Product(Long id, Date dop, Long id_Type, String image, String name, Double price, int quanlity) {
         this.id = id;
-        this.description = description;
-        this.cat_Id = cat_Id;
+        this.dop = dop;
+        this.id_Type = id_Type;
         this.image = image;
         this.name = name;
         this.price = price;
-        this.quantity = quantity;
+        this.quanlity = quanlity;
     }
 
     public Long getId() {
@@ -52,20 +51,20 @@ public class Product {
         this.id = id;
     }
 
-    public String getDescription() {
-        return description;
+    public Date getDop() {
+        return dop;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDop(Date dop) {
+        this.dop = dop;
     }
 
-    public Long getCat_Id() {
-        return cat_Id;
+    public Long getId_Type() {
+        return id_Type;
     }
 
-    public void setCat_Id(Long cat_Id) {
-        this.cat_Id = cat_Id;
+    public void setId_Type(Long id_Type) {
+        this.id_Type = id_Type;
     }
 
     public String getImage() {
@@ -92,11 +91,11 @@ public class Product {
         this.price = price;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public int getQuanlity() {
+        return quanlity;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setQuanlity(int quanlity) {
+        this.quanlity = quanlity;
     }
 }
