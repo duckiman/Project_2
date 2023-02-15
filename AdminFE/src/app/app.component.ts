@@ -10,7 +10,7 @@ export class AppComponent implements OnInit{
   title = 'AdminFE';
 
   ngOnInit(): void {
-//    this.onLoad();
+    // this.onLoad();
   }
   constructor() {}
   // onLoad(){

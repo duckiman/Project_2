@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name ="Orders")
-public class Orders {
+public class Order {
     @Id
     @SequenceGenerator(
             name = "orders",
@@ -19,10 +19,10 @@ public class Orders {
     @Column(name = "user_Id")
     private Long user_Id;
 
-    public Orders() {
+    public Order() {
     }
 
-    public Orders(Long id, Long user_Id) {
+    public Order(Long id, Long user_Id) {
         this.id = id;
         this.user_Id = user_Id;
     }

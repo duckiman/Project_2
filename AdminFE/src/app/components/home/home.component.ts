@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductService} from "../../services/product.service";
 import {Route, Router} from "@angular/router";
+import {ProductModelServer, ServerResponse} from "../../models/product.model";
 
 @Component({
   selector: 'app-home',
@@ -9,15 +10,14 @@ import {Route, Router} from "@angular/router";
 })
 export class HomeComponent implements OnInit {
 
-  products:any[]=[];
+  products:ProductModelServer[] = [];
 
   constructor(private productService: ProductService,
               private router: Router) { }
 
   ngOnInit(): void {
-    this.productService.getAllProducts().subscribe(
-      response => {
-        this.products= response;
+    this.productService.getAllProducts(6).subscribe((prods: ServerResponse ) => {
+      this.products = prods.products;
       }
     );
   }

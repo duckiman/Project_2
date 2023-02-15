@@ -99,4 +99,7 @@ public class Product {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+
+    public int getIn_cart() {
+    }
 }

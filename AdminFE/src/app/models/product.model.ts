@@ -1,7 +1,7 @@
 export interface ProductModelServer {
   id: number;
   name: string;
-  cat_id: number;
+  category: string;
   price: number;
   description: string;
   quantity: number;
@@ -9,5 +9,6 @@ export interface ProductModelServer {
 }
 
 export interface ServerResponse{
-  products: ProductModelServer[];
+  count:number;
+  products: ProductModelServer[]
 }
