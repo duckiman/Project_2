@@ -6,21 +6,21 @@ import {environment} from "../../environments/environment";
   providedIn: 'root'
 })
 export class OrderService {
-  product: ProductResponseModel[] = [];
-  serverURL = environment.SERVER_URL;
+  private products: ProductResponseModel[] = [];
+  private serverURL = environment.SERVER_URL;
 
   constructor(private http: HttpClient) {
   }
 
 
-  getSingleOrder(orderId: Number) {
-    return this.http.get<ProductResponseModel[]>(this.serverURL+'/orders'+orderId).toPromise();
+  getSingleOrder(orderId: number) {
+    return this.http.get<ProductResponseModel[]>(this.serverURL+'/orders'+orderId);
   }
 }
 
 interface ProductResponseModel {
   id: Number;
-  title: String;
+  name: String;
   description: String;
   price: Number;
   quantityOrdered: Number;

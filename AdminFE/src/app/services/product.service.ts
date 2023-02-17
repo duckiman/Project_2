@@ -21,8 +21,8 @@ export class ProductService {
       }
     });
   }
-  getSingleProduct(id: Number): Observable<ProductModelServer> {
-    return this.http.get<ProductModelServer>(this.SERVER_URL + 'products/' + id);
+  getSingleProduct(id: number): Observable<ProductModelServer> {
+    return this.http.get<ProductModelServer>(this.SERVER_URL + '/products' + id);
   }
   getProductsFromCategory(catName: String): Observable<ProductModelServer[]> {
     return this.http.get<ProductModelServer[]>(this.SERVER_URL + 'products/category/' + catName);
