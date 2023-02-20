@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {CartService} from "../../services/cart.service";
+import {CartModelServer} from "../../models/cart.model";
 
 @Component({
   selector: 'app-header',
@@ -6,38 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  cartData:CartModelServer = {} as CartModelServer;
+  cartTotal :Number = 0;
 
-  constructor() { }
+  constructor(public cartService: CartService) { }
 
   ngOnInit(): void {
-
-    // $('a.dropdown-toggle').on('click', function (e) {
-    //   alert('aaa')
-    // });
-  //   let btn = document.getElementById('cart-btn');
-  //   // @ts-ignore
-  //   btn.addEventListener("click", function(e){
-  //     let isExpanded = this.getAttribute("aria-expanded");
-  //     // alert(isExpanded);
-  //     if(isExpanded == 'true'){
-  //       // @ts-ignore
-  //       this.parentNode.classList.remove('open');
-  //     }else{
-  //       // @ts-ignore
-  //       this.parentNode.classList.add('open');
-  //     }
-  //
-  //     this.setAttribute("aria-expanded",  isExpanded == 'false'? 'true': 'false');
-  //
-  //   });
-  //
-  //
-  //
-  //   let cartDropdown = document.getElementsByClassName('cart-dropdown')[0];
-  //   // @ts-ignore
-  //   cartDropdown.addEventListener("click", function(e) {
-  //     e.stopPropagation();
-  //   })
-   }
-
+    this.cartService.cartTotal$.subscribe(total => {
+      this.cartTotal = total;
+   });
+    this.cartService.cartDataObs$.subscribe(data => this.cartData = data);
+  }
 }

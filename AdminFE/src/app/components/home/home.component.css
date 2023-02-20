@@ -1,3 +1,10 @@
 .disabled{
   cursor: not-allowed;
 }
+.bold {
+  font-weight: bold;
+}
+.card {
+  width: 350px;
+  height: 600px;
+}
